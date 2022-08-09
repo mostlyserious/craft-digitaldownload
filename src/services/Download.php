@@ -294,14 +294,6 @@ class Download extends Component
 
         // If user is not authorized
         if (!$this->_isAuthorizedUser($link)) {
-
-            // If they are not logged in
-            if (!$this->_user) {
-                // Redirect to the login page
-                Craft::$app->getUser()->loginRequired();
-                Craft::$app->end();
-            }
-
             // Set error and bail
             $link->error = 'User is not authorized to download file.';
             return false;
